@@ -3,7 +3,11 @@ import { svelte } from '@sveltejs/vite-plugin-svelte';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [svelte()],
+  plugins: [
+    svelte({
+      emitCss: false,
+    }),
+  ],
   define: {
     'process.env.LOGGER_LEVEL': 'process.env.LOGGER_LEVEL',
     'process.env.NODE_ENV': 'process.env.NODE_ENV',
@@ -16,7 +20,7 @@ export default defineConfig({
     rollupOptions: {
       input: './src/main.ts',
       preserveEntrySignatures: 'strict',
-      external: ['@norce/checkout-lib'],
+      // external: ['@norce/checkout-lib'],
       output: {
         entryFileNames: '[name].js',
         format: 'systemjs',
