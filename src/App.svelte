@@ -1,19 +1,35 @@
 <script lang="ts">
-  import { Checkout } from '@norce/checkout-lib';
+  import { setContext } from 'svelte';
+  import CartItem from './components/CartItem.svelte';
+  import { key, type CheckoutContext } from './constants';
+  export let Checkout: CheckoutContext['Checkout'];
+  export let EventEmitter: CheckoutContext['EventEmitter'];
+
   const order = Checkout.order;
 
-  // setTimeout(() => {
-  //   throw new Error();
-  // }, 2000);
+  setContext<CheckoutContext>(key, {
+    Checkout,
+    EventEmitter,
+  });
 </script>
 
-<h1>hello from the other side</h1>
-<p>{$order?.id}</p>
+<div>
+  {#each $order?.cart.items as item}
+    <CartItem {item} />
+  {/each}
+</div>
 
 <style>
   h1 {
     color: #ff3e00;
     text-align: center;
     margin: 40px 0;
+  }
+
+  div {
+    border: 1px solid #f1b1b1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 </style>

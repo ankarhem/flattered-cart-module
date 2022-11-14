@@ -1,3 +1,4 @@
+import type { Checkout, CheckoutEventEmitter } from '@norce/checkout-lib';
 import type { SvelteComponent } from 'svelte';
 
 interface ModuleMethods {
@@ -24,11 +25,16 @@ const bootstrap = () => {
 const mount = (
   instances: Instances,
   App: typeof SvelteComponent,
-  el: HTMLElement
+  el: HTMLElement,
+  props: {
+    Checkout: Checkout;
+    EventEmitter: typeof CheckoutEventEmitter;
+  }
 ) => {
   if (!instances[el.id]) {
     const app = new App({
       target: el,
+      props: props,
     });
     instances[el.id] = app;
   } else {
