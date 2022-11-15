@@ -3,6 +3,7 @@ import { svelte } from '@sveltejs/vite-plugin-svelte';
 import * as cp from 'child_process';
 import livereload from 'rollup-plugin-livereload';
 
+// Small plugin to serve js assets from the dist folder
 function serve(): Plugin {
   let server;
 
@@ -34,13 +35,6 @@ export default defineConfig({
       emitCss: false,
     }),
   ],
-  // define: {
-  //   'process.env.LOGGER_LEVEL': 'process.env.LOGGER_LEVEL',
-  //   'process.env.NODE_ENV': 'process.env.NODE_ENV',
-  // },
-  // optimizeDeps: {
-  //   exclude: ['@norce/checkout-lib'],
-  // },
   build: {
     minify: false,
     rollupOptions: {
@@ -54,7 +48,6 @@ export default defineConfig({
       ],
       input: './src/main.ts',
       preserveEntrySignatures: 'strict',
-      // external: ['@norce/checkout-lib'],
       output: {
         entryFileNames: '[name].js',
         format: 'systemjs',

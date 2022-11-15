@@ -11,25 +11,53 @@
     Checkout,
     EventEmitter,
   });
+
+  EventEmitter.subscribe({
+    event: 'add_to_cart',
+    callback: async (payload) => {
+      console.log('add_to_cart listener in custom module', payload);
+    },
+  });
 </script>
 
-<div>
-  {#each $order?.cart.items as item}
-    <CartItem {item} />
-  {/each}
+<div class="wrapper">
+  <span class="lock">🔒</span>
+  <h1>Kassa</h1>
+
+  <p class="usp">Free shipping and 60 days return policy.</p>
+  <div class="cart">
+    {#each $order?.cart.items as item}
+      <CartItem {item} />
+    {/each}
+  </div>
 </div>
 
 <style>
   h1 {
-    color: #ff3e00;
-    text-align: center;
-    margin: 40px 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .lock {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
   }
 
-  div {
-    border: 1px solid #f1b1b1;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  .usp {
+    margin: 3rem auto 5rem;
+    font-size: 0.8rem;
+    /* font-weight: 400; */
+  }
+
+  .cart {
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
+    width: 620px;
   }
 </style>
