@@ -1,5 +1,11 @@
 # @norce/custom-module-flattered-cart
 
+## 0.0.3
+
+### Patch Changes
+
+- 484a7ca: add css for disabled and cursor
+
 ## 0.0.2
 
 ### Patch Changes
