@@ -1,6 +1,7 @@
 <script lang="ts">
   import { setContext } from 'svelte';
   import CartItem from './components/CartItem.svelte';
+  import Summary from './components/Summary.svelte';
   import { key, type CheckoutContext } from './constants';
   export let Checkout: CheckoutContext['Checkout'];
   export let EventEmitter: CheckoutContext['EventEmitter'];
@@ -30,6 +31,8 @@
       <CartItem {item} />
     {/each}
   </div>
+
+  <Summary />
 </div>
 
 <style>
@@ -61,5 +64,6 @@
     flex-direction: column;
     gap: 1rem;
     width: 620px;
+    margin-bottom: 2rem;
   }
 </style>
