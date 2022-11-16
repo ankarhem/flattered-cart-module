@@ -69,7 +69,8 @@
   }
 
   .cart-item {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     font-size: small;
   }
@@ -141,5 +142,11 @@
     color: #fff;
     border-radius: 1rem;
     font-size: 0.8rem;
+    cursor: pointer;
+  }
+
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 </style>
