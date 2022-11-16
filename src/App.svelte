@@ -42,6 +42,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 2rem;
+    font-family: 'Avenir Next', Avenir, Lato, Arial, sans-serif;
   }
   .lock {
     margin-top: 2rem;
