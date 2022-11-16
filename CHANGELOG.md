@@ -1,5 +1,11 @@
 # @norce/custom-module-flattered-cart
 
+## 0.0.4
+
+### Patch Changes
+
+- 4b60bde: temporarily add summary inside this cart module
+
 ## 0.0.3
 
 ### Patch Changes
