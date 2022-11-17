@@ -62,8 +62,14 @@
   .cart {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    width: 620px;
+    gap: 2rem;
     margin-bottom: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .cart {
+      gap: 1rem;
+      max-width: 620px;
+    }
   }
 </style>

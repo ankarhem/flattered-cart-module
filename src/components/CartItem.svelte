@@ -70,8 +70,8 @@
 
   .cart-item {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
     font-size: small;
   }
 
@@ -82,7 +82,7 @@
   .cart-info {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
   }
 
   .header-row {
@@ -148,5 +148,16 @@
   button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+  }
+
+  @media (min-width: 768px) {
+    .cart-item {
+      gap: 2rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cart-info {
+      gap: 1rem;
+    }
   }
 </style>
