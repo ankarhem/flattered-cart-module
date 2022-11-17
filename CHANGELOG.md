@@ -1,5 +1,11 @@
 # @norce/custom-module-flattered-cart
 
+## 0.0.5
+
+### Patch Changes
+
+- b2b1446: add mobile styles
+
 ## 0.0.4
 
 ### Patch Changes
