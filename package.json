@@ -1,7 +1,7 @@
 {
   "name": "@norce/custom-module-flattered-cart",
   "private": false,
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
   "main": "dist/main.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.25.2",
+    "@changesets/cli": "^2.26.0",
     "@norce/checkout-lib": "0.1.0-pre.4",
     "@sveltejs/vite-plugin-svelte": "^1.1.0",
     "@tsconfig/svelte": "^3.0.0",

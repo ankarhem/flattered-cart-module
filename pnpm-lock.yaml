@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@changesets/cli': ^2.25.2
+  '@changesets/cli': ^2.26.0
   '@norce/checkout-lib': 0.1.0-pre.4
   '@norce/module-adapter-svelte': 1.1.0-pre.7
   '@sveltejs/vite-plugin-svelte': ^1.1.0
