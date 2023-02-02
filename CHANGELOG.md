@@ -1,5 +1,11 @@
 # @norce/custom-module-flattered-cart
 
+## 0.0.8
+
+### Patch Changes
+
+- use EventEmitter
+
 ## 0.0.7
 
 ### Patch Changes

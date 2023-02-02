@@ -6,6 +6,7 @@
 
   export let api: MountProps['api'];
   export let data: MountProps['data'];
+  export let EventEmitter: MountProps['EventEmitter'];
 
   onMount(() => {
     culture.set(data.order.culture);
@@ -15,7 +16,7 @@
 <div class="grid gap-2 text-sm">
   <ul class="grid divide-black/50 divide-y">
     {#each data.order.cart.items as item}
-      <CartItem {item} {api} {data} />
+      <CartItem {item} {api} {data} {EventEmitter} />
     {/each}
   </ul>
 </div>

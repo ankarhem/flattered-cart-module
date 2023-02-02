@@ -1,14 +1,11 @@
 <script lang="ts">
   import type { MountProps } from '@norce/module-adapter-svelte';
-  import {
-    CheckoutEventEmitter,
-    createFormatter,
-    Events,
-  } from '@norce/checkout-lib';
+  import { createFormatter, Events } from '@norce/checkout-lib';
   import { t } from './translations';
   export let item: MountProps['data']['order']['cart']['items'][number];
   export let api: MountProps['api'];
   export let data: MountProps['data'];
+  export let EventEmitter: MountProps['EventEmitter'];
 
   const formatter = createFormatter(data.order.culture, data.order.currency);
 
@@ -63,7 +60,7 @@
               itemReference: item.reference,
               quantity: String(quantity),
             });
-            CheckoutEventEmitter.dispatch({
+            EventEmitter.dispatch({
               event: Events.AddToCart,
               payload: {
                 ...item,
@@ -107,7 +104,7 @@
       disabled={api.state === 'pending'}
       on:click={() => {
         api.deleteItem(item.reference);
-        CheckoutEventEmitter.dispatch({
+        EventEmitter.dispatch({
           event: Events.RemoveFromCart,
           payload: item,
         });
