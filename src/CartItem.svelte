@@ -1,6 +1,10 @@
 <script lang="ts">
   import type { MountProps } from '@norce/module-adapter-svelte';
-  import { createFormatter } from '@norce/checkout-lib';
+  import {
+    CheckoutEventEmitter,
+    createFormatter,
+    Events,
+  } from '@norce/checkout-lib';
   import { t } from './translations';
   export let item: MountProps['data']['order']['cart']['items'][number];
   export let api: MountProps['api'];
@@ -59,6 +63,13 @@
               itemReference: item.reference,
               quantity: String(quantity),
             });
+            CheckoutEventEmitter.dispatch({
+              event: Events.AddToCart,
+              payload: {
+                ...item,
+                quantity: quantity,
+              },
+            });
           }}
           >&minus;
         </button>
@@ -72,7 +83,7 @@
         {/if}
       {/each}
 
-      {#if typeof item.attributes.STOCK_LEVEL !== 'undefined'}
+      {#if typeof item.attributes.STOCK_LEVEL === 'number'}
         <div class="flex gap-2 items-center">
           {#if item.attributes.STOCK_LEVEL > 0}
             <span class="w-2 h-2 rounded-full bg-green-600" />
@@ -94,7 +105,13 @@
     <button
       class="underline underline-offset-4"
       disabled={api.state === 'pending'}
-      on:click={() => api.deleteItem(item.reference)}
+      on:click={() => {
+        api.deleteItem(item.reference);
+        CheckoutEventEmitter.dispatch({
+          event: Events.RemoveFromCart,
+          payload: item,
+        });
+      }}
     >
       {t('Remove')}
     </button>

@@ -6,7 +6,6 @@
 
   export let api: MountProps['api'];
   export let data: MountProps['data'];
-  export let EventEmitter: MountProps['EventEmitter'];
 
   onMount(() => {
     culture.set(data.order.culture);
