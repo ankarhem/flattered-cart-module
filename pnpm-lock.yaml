@@ -2,8 +2,8 @@ lockfileVersion: 5.4
 
 specifiers:
   '@changesets/cli': ^2.26.0
-  '@norce/checkout-lib': 0.1.0-pre.6
-  '@norce/module-adapter-svelte': 1.1.0-pre.11
+  '@norce/checkout-lib': 0.1.0-pre.9
+  '@norce/module-adapter-svelte': 1.1.0-pre.14
   '@sveltejs/vite-plugin-svelte': ^1.1.0
   '@tsconfig/svelte': ^3.0.0
   autoprefixer: ^10.4.13
@@ -15,16 +15,16 @@ specifiers:
   svelte: ^3.52.0
   svelte-check: ^2.9.2
   svelte-preprocess: ^4.10.7
-  tailwindcss: ^3.2.4
+  tailwindcss: ^3.2.7
   tslib: ^2.4.0
-  type-fest: ^3.5.4
-  typescript: ^4.6.4
+  type-fest: ^3.6.1
+  typescript: ^4.9.5
   vite: ^3.2.3
 
 devDependencies:
   '@changesets/cli': 2.26.0
-  '@norce/checkout-lib': 0.1.0-pre.6
-  '@norce/module-adapter-svelte': 1.1.0-pre.11
+  '@norce/checkout-lib': 0.1.0-pre.9
+  '@norce/module-adapter-svelte': 1.1.0-pre.14_6asoqkdycpnzslnf5kzw2uu3qm
   '@sveltejs/vite-plugin-svelte': 1.4.0_svelte@3.55.1+vite@3.2.5
   '@tsconfig/svelte': 3.0.0
   autoprefixer: 10.4.13_postcss@8.4.21
@@ -35,11 +35,11 @@ devDependencies:
   rollup-plugin-livereload: 2.0.5
   svelte: 3.55.1
   svelte-check: 2.10.3_pehl75e5jsy22vp33udjja4soi
-  svelte-preprocess: 4.10.7_oifjsu5oar4lzyaoppb2hxramu
-  tailwindcss: 3.2.4_postcss@8.4.21
+  svelte-preprocess: 4.10.7_k4bhxdknaltjvjwprbm23edr5q
+  tailwindcss: 3.2.7_postcss@8.4.21
   tslib: 2.5.0
-  type-fest: 3.5.4
-  typescript: 4.9.4
+  type-fest: 3.6.1
+  typescript: 4.9.5
   vite: 3.2.5
 
 packages:
@@ -331,14 +331,20 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@norce/checkout-lib/0.1.0-pre.6:
-    resolution: {integrity: sha512-+gr87e7xNAua8IZjG96mdRgUcciZv/ssRYYLrqI6obmuUkf3QK1+6uLPx21A5iGxpwuRBqf7ErSKckGVofgRew==}
+  /@norce/checkout-lib/0.1.0-pre.9:
+    resolution: {integrity: sha512-TQUfbWy45u0n/JDmpXadvfVRO5N+zU3mNr7Bls4Xv8LWASJm2m4xEimpK5qBRSa+zYeGgEFTYH9seP+9vMdldw==}
     dependencies:
       openapi-typescript-fetch: 1.1.3
     dev: true
 
-  /@norce/module-adapter-svelte/1.1.0-pre.11:
-    resolution: {integrity: sha512-Mql/HE1DqG2u4Qb+gyxLE7VVqmQffQDS1bADhMEek9/hMomyY8rigzC3ddJilL1n5fm0TS59vp426V0KrMikQw==}
+  /@norce/module-adapter-svelte/1.1.0-pre.14_6asoqkdycpnzslnf5kzw2uu3qm:
+    resolution: {integrity: sha512-oIS2dMsRrpnWUi1q+6W7GUsng/OPagNkWP5le5EQAJe9ey1Dd1DKonSkZPC3PT6eqto6nmMwdvAgSihsdIa+8Q==}
+    peerDependencies:
+      '@norce/checkout-lib': 0.1.0-pre.9
+      svelte: ^3.x.x
+    dependencies:
+      '@norce/checkout-lib': 0.1.0-pre.9
+      svelte: 3.55.1
     dev: true
 
   /@sveltejs/vite-plugin-svelte/1.4.0_svelte@3.55.1+vite@3.2.5:
@@ -2573,8 +2579,8 @@ packages:
       picocolors: 1.0.0
       sade: 1.8.1
       svelte: 3.55.1
-      svelte-preprocess: 4.10.7_oifjsu5oar4lzyaoppb2hxramu
-      typescript: 4.9.4
+      svelte-preprocess: 4.10.7_k4bhxdknaltjvjwprbm23edr5q
+      typescript: 4.9.5
     transitivePeerDependencies:
       - '@babel/core'
       - coffeescript
@@ -2597,7 +2603,7 @@ packages:
       svelte: 3.55.1
     dev: true
 
-  /svelte-preprocess/4.10.7_oifjsu5oar4lzyaoppb2hxramu:
+  /svelte-preprocess/4.10.7_k4bhxdknaltjvjwprbm23edr5q:
     resolution: {integrity: sha512-sNPBnqYD6FnmdBrUmBCaqS00RyCsCpj2BG58A1JBswNF7b0OKviwxqVrOL/CKyJrLSClrSeqQv5BXNg2RUbPOw==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
@@ -2646,7 +2652,7 @@ packages:
       sorcery: 0.10.0
       strip-indent: 3.0.0
       svelte: 3.55.1
-      typescript: 4.9.4
+      typescript: 4.9.5
     dev: true
 
   /svelte/3.55.1:
@@ -2654,8 +2660,8 @@ packages:
     engines: {node: '>= 8'}
     dev: true
 
-  /tailwindcss/3.2.4_postcss@8.4.21:
-    resolution: {integrity: sha512-AhwtHCKMtR71JgeYDaswmZXhPcW9iuI9Sp2LvZPo9upDZ7231ZJ7eA9RaURbhpXGVlrjX4cFNlB4ieTetEb7hQ==}
+  /tailwindcss/3.2.7_postcss@8.4.21:
+    resolution: {integrity: sha512-B6DLqJzc21x7wntlH/GsZwEXTBttVSl1FtCzC8WP4oBc/NKef7kaax5jeihkkCEWc831/5NDJ9gRNDK6NEioQQ==}
     engines: {node: '>=12.13.0'}
     hasBin: true
     peerDependencies:
@@ -2750,8 +2756,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /type-fest/3.5.4:
-    resolution: {integrity: sha512-/Je22Er4LPoln256pcLzj73MUmPrTWg8u4WB1RlxaDl0idJOfD1r259VtKOinp4xLJqJ9zYVMuWOun6Ssp7boA==}
+  /type-fest/3.6.1:
+    resolution: {integrity: sha512-htXWckxlT6U4+ilVgweNliPqlsVSSucbxVexRYllyMVJDtf5rTjv6kF/s+qAd4QSL1BZcnJPEJavYBPQiWuZDA==}
     engines: {node: '>=14.16'}
     dev: true
 
@@ -2763,8 +2769,8 @@ packages:
       is-typed-array: 1.1.10
     dev: true
 
-  /typescript/4.9.4:
-    resolution: {integrity: sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg==}
+  /typescript/4.9.5:
+    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
