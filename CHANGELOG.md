@@ -1,5 +1,11 @@
 # @norce/custom-module-flattered-cart
 
+## 0.1.0
+
+### Minor Changes
+
+- update deps and add tracking
+
 ## 0.0.8
 
 ### Patch Changes

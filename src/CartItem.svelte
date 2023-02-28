@@ -1,11 +1,12 @@
 <script lang="ts">
   import type { MountProps } from '@norce/module-adapter-svelte';
-  import { createFormatter, Events } from '@norce/checkout-lib';
+  import { createFormatter, convertItemToGA4Item } from '@norce/checkout-lib';
   import { t } from './translations';
+  import { TrackingEvents } from '@norce/analytics';
   export let item: MountProps['data']['order']['cart']['items'][number];
   export let api: MountProps['api'];
   export let data: MountProps['data'];
-  export let EventEmitter: MountProps['EventEmitter'];
+  export let track: MountProps['track'];
 
   const formatter = createFormatter(data.order.culture, data.order.currency);
 
@@ -48,6 +49,11 @@
               itemReference: item.reference,
               quantity: String(quantity),
             });
+            track(TrackingEvents.AddToCart, {
+              items: [convertItemToGA4Item({ ...item, quantity: quantity })],
+              currency: data.order.currency,
+              value: item.price?.includingVat,
+            });
           }}
           >&plus;
         </button>
@@ -60,12 +66,10 @@
               itemReference: item.reference,
               quantity: String(quantity),
             });
-            EventEmitter.dispatch({
-              event: Events.AddToCart,
-              payload: {
-                ...item,
-                quantity: quantity,
-              },
+            track(TrackingEvents.RemoveFromCart, {
+              items: [convertItemToGA4Item({ ...item, quantity: quantity })],
+              currency: data.order.currency,
+              value: item.price?.includingVat,
             });
           }}
           >&minus;
@@ -104,9 +108,10 @@
       disabled={api.state === 'pending'}
       on:click={() => {
         api.deleteItem(item.reference);
-        EventEmitter.dispatch({
-          event: Events.RemoveFromCart,
-          payload: item,
+        track(TrackingEvents.RemoveFromCart, {
+          items: [convertItemToGA4Item({ ...item, quantity: 0 })],
+          currency: data.order.currency,
+          value: item.price?.includingVat,
         });
       }}
     >
